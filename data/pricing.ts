@@ -1,0 +1,57 @@
+import { type PricingPlan } from '@/types'
+
+export const pricingPlans: PricingPlan[] = [
+  {
+    id: 'starter',
+    name: 'Starter',
+    price: '$3,000',
+    description: 'Perfect for MVP development',
+    features: [
+      'Up to 2 features per month',
+      'Direct architect access',
+      'Weekly progress updates',
+      'Code ownership',
+      '30-day warranty',
+    ],
+    highlighted: false,
+    cta: 'Get Started',
+    ctaLink: '/contact?plan=starter',
+  },
+  {
+    id: 'growth',
+    name: 'Growth',
+    price: '$6,000',
+    description: 'For product iteration and scaling',
+    features: [
+      'Up to 5 features per month',
+      'Priority support (4-hour response)',
+      'Daily standups available',
+      'Code reviews included',
+      'Performance monitoring',
+      'Code ownership',
+      '30-day warranty',
+    ],
+    highlighted: true,
+    cta: 'Most Popular',
+    ctaLink: '/contact?plan=growth',
+  },
+  {
+    id: 'scale',
+    name: 'Scale',
+    price: '$10,000',
+    description: 'Complex systems and high-volume',
+    features: [
+      'Unlimited features',
+      '24/7 emergency support',
+      'Dedicated Slack channel',
+      'System architecture reviews',
+      'Performance optimization',
+      'Security audits',
+      'Code ownership',
+      '30-day warranty',
+    ],
+    highlighted: false,
+    cta: 'Contact Sales',
+    ctaLink: '/contact?plan=scale',
+  },
+]

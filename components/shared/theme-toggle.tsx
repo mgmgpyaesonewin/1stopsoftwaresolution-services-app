@@ -1,7 +1,7 @@
 'use client'
 
 import { Moon, Sun } from 'lucide-react'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { Button } from '@/components/ui/button'
 
 const applyTheme = (newTheme: 'light' | 'dark') => {
@@ -13,18 +13,21 @@ const applyTheme = (newTheme: 'light' | 'dark') => {
   localStorage.setItem('theme', newTheme)
 }
 
-const getInitialTheme = (): 'light' | 'dark' => {
-  const savedTheme = localStorage.getItem('theme') as 'light' | 'dark' | null
-  const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches
-  return savedTheme ?? (prefersDark ? 'dark' : 'light')
-}
-
 export function ThemeToggle() {
-  const [theme, setTheme] = useState<'light' | 'dark'>(() => {
-    const initialTheme = getInitialTheme()
+  const [theme, setTheme] = useState<'light' | 'dark'>('light')
+
+  useEffect(() => {
+    const savedTheme = localStorage.getItem('theme') as 'light' | 'dark' | null
+    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches
+    const initialTheme = savedTheme ?? (prefersDark ? 'dark' : 'light')
+
+    if (initialTheme !== 'light') {
+      /* Disable ESLint for the next line */
+      // eslint-disable-next-line
+      setTheme(initialTheme)
+    }
     applyTheme(initialTheme)
-    return initialTheme
-  })
+  }, [])
 
   const toggleTheme = () => {
     const newTheme = theme === 'light' ? 'dark' : 'light'

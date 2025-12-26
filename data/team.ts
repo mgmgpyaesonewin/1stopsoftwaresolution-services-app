@@ -1,4 +1,6 @@
-export const teamMembers = [
+import { type TeamMember } from '@/types'
+
+export const teamMembers: TeamMember[] = [
   {
     id: 'alex-chen',
     name: 'Alex Chen',
@@ -37,4 +39,4 @@ export const teamMembers = [
     linkedin: 'https://linkedin.com/in/davidkim',
     github: 'https://github.com/davidkim',
   },
-] as const
+]

@@ -1,0 +1,6 @@
+export { HeroSection } from './hero-section'
+export { ValuePropSection } from './value-prop-section'
+export { ProblemSection } from './problem-section'
+export { CTASection } from './cta-section'
+export { StatsSection } from './stats-section'
+export { TeamSection } from './team-section'

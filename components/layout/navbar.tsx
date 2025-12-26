@@ -7,6 +7,7 @@ import { Button } from '@/components/ui/button'
 import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet'
 import { useState } from 'react'
 import { SITE_CONFIG } from '@/config/site'
+import { ThemeToggle } from '@/components/shared'
 
 export function Navbar() {
   const pathname = usePathname()
@@ -41,31 +42,34 @@ export function Navbar() {
             ))}
           </div>
 
-          <Sheet open={open} onOpenChange={setOpen}>
-            <SheetTrigger asChild className="md:hidden">
-              <Button variant="ghost" size="icon">
-                <Menu className="h-6 w-6" />
-              </Button>
-            </SheetTrigger>
-            <SheetContent side="right" className="w-[300px] sm:w-[400px]">
-              <nav className="mt-8 flex flex-col space-y-4">
-                {SITE_CONFIG.nav.map(link => (
-                  <Link
-                    key={link.href}
-                    href={link.href}
-                    onClick={() => setOpen(false)}
-                    className={`text-lg ${
-                      isActive(link.href)
-                        ? 'text-primary font-medium'
-                        : 'text-muted-foreground hover:text-foreground'
-                    } transition-colors`}
-                  >
-                    {link.title}
-                  </Link>
-                ))}
-              </nav>
-            </SheetContent>
-          </Sheet>
+          <div className="flex items-center gap-2">
+            <ThemeToggle />
+            <Sheet open={open} onOpenChange={setOpen}>
+              <SheetTrigger asChild className="md:hidden">
+                <Button variant="ghost" size="icon">
+                  <Menu className="h-6 w-6" />
+                </Button>
+              </SheetTrigger>
+              <SheetContent side="right" className="w-[300px] sm:w-[400px]">
+                <nav className="mt-8 flex flex-col space-y-4">
+                  {SITE_CONFIG.nav.map(link => (
+                    <Link
+                      key={link.href}
+                      href={link.href}
+                      onClick={() => setOpen(false)}
+                      className={`text-lg ${
+                        isActive(link.href)
+                          ? 'text-primary font-medium'
+                          : 'text-muted-foreground hover:text-foreground'
+                      } transition-colors`}
+                    >
+                      {link.title}
+                    </Link>
+                  ))}
+                </nav>
+              </SheetContent>
+            </Sheet>
+          </div>
         </div>
       </div>
     </nav>

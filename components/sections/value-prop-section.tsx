@@ -8,7 +8,7 @@ export function ValuePropSection() {
       title: 'Direct Communication',
       description:
         'Talk directly to the solution architect. Real answers, no delays. Iterate in hours, not weeks.',
-      bgColor: 'bg-blue-100 text-blue-600',
+      bgColor: 'bg-indigo-100 text-indigo-600',
     },
     {
       icon: DollarSign,

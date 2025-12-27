@@ -17,4 +17,4 @@ export const SITE_CONFIG = {
   ],
 }
 
-export const CONTACT_EMAIL = 'architect@1stopsoftwaresolution.com'
+export const CONTACT_EMAIL = 'pyaesonewin.dev@gmail.com'

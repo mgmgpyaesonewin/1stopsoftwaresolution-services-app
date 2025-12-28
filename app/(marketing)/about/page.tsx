@@ -1,17 +1,13 @@
 import { CheckCircle, Target, TrendingUp } from 'lucide-react'
+import { PageHero } from '@/components/sections'
 
 export default function AboutPage() {
   return (
     <div>
-      <section className="via-primary text-primary-foreground bg-gradient-to-br from-indigo-600 to-indigo-900 py-20">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <h1 className="text-primary-foreground mb-6">About Our Lean Model</h1>
-          <p className="text-primary-foreground/90 max-w-3xl">
-            We&apos;ve reimagined software development to eliminate waste, reduce costs, and deliver
-            faster results through direct collaboration.
-          </p>
-        </div>
-      </section>
+      <PageHero
+        title="About Our Lean Model"
+        description="We've reimagined software development to eliminate waste, reduce costs, and deliver faster results through direct collaboration."
+      />
 
       <section className="bg-white py-20">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">

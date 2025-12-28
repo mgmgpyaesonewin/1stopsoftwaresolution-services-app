@@ -58,11 +58,11 @@ export default function ContactPage() {
         description="Ready to start your project? Schedule a free 30-minute consultation to discuss your idea, assess technical needs, and find right pricing model."
       />
 
-      <section className="bg-gray-50 py-20">
+      <section className="bg-muted py-20">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 gap-12 lg:grid-cols-3">
             <div className="lg:col-span-1">
-              <h2 className="mb-6 text-gray-900">Contact Information</h2>
+              <h2 className="text-foreground mb-6">Contact Information</h2>
 
               <div className="space-y-6">
                 <div className="flex items-start">
@@ -72,7 +72,7 @@ export default function ContactPage() {
                     </div>
                   </div>
                   <div className="ml-4">
-                    <h3 className="mb-1 text-gray-900">Email</h3>
+                    <h3 className="text-foreground mb-1">Email</h3>
                     <a
                       href="mailto:architect@1stopsoftwaresolution.com"
                       className="text-blue-600 hover:text-blue-700"
@@ -89,8 +89,8 @@ export default function ContactPage() {
                     </div>
                   </div>
                   <div className="ml-4">
-                    <h3 className="mb-1 text-gray-900">Response Time</h3>
-                    <p className="text-gray-600">Within 4 hours</p>
+                    <h3 className="text-foreground mb-1">Response Time</h3>
+                    <p className="text-muted-foreground">Within 4 hours</p>
                   </div>
                 </div>
 
@@ -101,9 +101,9 @@ export default function ContactPage() {
                     </div>
                   </div>
                   <div className="ml-4">
-                    <h3 className="mb-1 text-gray-900">Location</h3>
-                    <p className="text-gray-600">Remote-first</p>
-                    <p className="text-gray-600">Timezone-friendly</p>
+                    <h3 className="text-foreground mb-1">Location</h3>
+                    <p className="text-muted-foreground">Remote-first</p>
+                    <p className="text-muted-foreground">Timezone-friendly</p>
                   </div>
                 </div>
 
@@ -114,16 +114,16 @@ export default function ContactPage() {
                     </div>
                   </div>
                   <div className="ml-4">
-                    <h3 className="mb-1 text-gray-900">After Project Start</h3>
-                    <p className="text-gray-600">Direct Slack access</p>
-                    <p className="text-gray-600">Real-time communication</p>
+                    <h3 className="text-foreground mb-1">After Project Start</h3>
+                    <p className="text-muted-foreground">Direct Slack access</p>
+                    <p className="text-muted-foreground">Real-time communication</p>
                   </div>
                 </div>
               </div>
 
-              <div className="mt-8 rounded-lg border-2 border-blue-200 bg-blue-50 p-6">
-                <h3 className="mb-2 text-gray-900">Free Consultation Includes:</h3>
-                <ul className="space-y-2 text-gray-600">
+              <div className="mt-8 rounded-lg border-2 border-blue-200 bg-blue-50 p-6 dark:bg-blue-950/30">
+                <h3 className="text-foreground mb-2">Free Consultation Includes:</h3>
+                <ul className="text-muted-foreground space-y-2">
                   <li>• Discuss your idea</li>
                   <li>• Technical feasibility assessment</li>
                   <li>• Timeline estimation</li>
@@ -134,8 +134,8 @@ export default function ContactPage() {
             </div>
 
             <div className="lg:col-span-2">
-              <div className="rounded-lg bg-white p-8 shadow-md">
-                <h2 className="mb-6 text-gray-900">Send us a Message</h2>
+              <div className="bg-card rounded-lg p-8 shadow-md">
+                <h2 className="text-foreground mb-6">Send us a Message</h2>
 
                 {submitted ? (
                   <div className="rounded-lg border-2 border-green-200 bg-green-50 p-6 text-center text-green-800">
@@ -261,7 +261,7 @@ export default function ContactPage() {
                       Send Message <Send className="ml-2 h-5 w-5" />
                     </Button>
 
-                    <p className="text-center text-gray-600">
+                    <p className="text-muted-foreground text-center">
                       We&apos;ll respond within 4 hours during business days
                     </p>
                   </form>
@@ -272,16 +272,16 @@ export default function ContactPage() {
         </div>
       </section>
 
-      <section className="bg-white py-20">
+      <section className="bg-background py-20">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <h2 className="mb-12 text-center text-gray-900">What Happens Next?</h2>
+          <h2 className="text-foreground mb-12 text-center">What Happens Next?</h2>
           <div className="grid grid-cols-1 gap-8 md:grid-cols-3">
             <div className="text-center">
               <div className="mb-4 inline-flex h-16 w-16 items-center justify-center rounded-full bg-blue-100 text-blue-600">
                 <div className="text-blue-600">1</div>
               </div>
-              <h3 className="mb-2 text-gray-900">We Review Your Request</h3>
-              <p className="text-gray-600">
+              <h3 className="text-foreground mb-2">We Review Your Request</h3>
+              <p className="text-muted-foreground">
                 Our solution architect reviews your project details and prepares for the
                 consultation.
               </p>
@@ -290,8 +290,8 @@ export default function ContactPage() {
               <div className="mb-4 inline-flex h-16 w-16 items-center justify-center rounded-full bg-green-100 text-green-600">
                 <div className="text-green-600">2</div>
               </div>
-              <h3 className="mb-2 text-gray-900">Schedule a Call</h3>
-              <p className="text-gray-600">
+              <h3 className="text-foreground mb-2">Schedule a Call</h3>
+              <p className="text-muted-foreground">
                 We&apos;ll send you a calendar link to book a 30-minute consultation at your
                 convenience.
               </p>
@@ -300,8 +300,8 @@ export default function ContactPage() {
               <div className="mb-4 inline-flex h-16 w-16 items-center justify-center rounded-full bg-purple-100 text-purple-600">
                 <div className="text-purple-600">3</div>
               </div>
-              <h3 className="mb-2 text-gray-900">Get Your Proposal</h3>
-              <p className="text-gray-600">
+              <h3 className="text-foreground mb-2">Get Your Proposal</h3>
+              <p className="text-muted-foreground">
                 After call, receive a detailed proposal with timeline, cost estimate, and next
                 steps.
               </p>
@@ -310,21 +310,21 @@ export default function ContactPage() {
         </div>
       </section>
 
-      <section className="bg-gray-50 py-20">
+      <section className="bg-muted py-20">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 items-center gap-12 lg:grid-cols-2">
             <div>
-              <h2 className="mb-6 text-gray-900">Let&apos;s Build Something Great Together</h2>
-              <p className="mb-4 text-gray-600">
+              <h2 className="text-foreground mb-6">Let&apos;s Build Something Great Together</h2>
+              <p className="text-muted-foreground mb-4">
                 Whether you&apos;re a startup with a bold vision or an established business looking
                 to innovate, we&apos;re here to help you succeed.
               </p>
-              <p className="mb-6 text-gray-600">
+              <p className="text-muted-foreground mb-6">
                 Our lean model means you get expert development at a fraction of cost, with direct
                 access to the people building your product.
               </p>
-              <div className="border-l-4 border-blue-600 bg-blue-50 p-4">
-                <p className="text-gray-700 italic">
+              <div className="border-l-4 border-blue-600 bg-blue-50 p-4 dark:bg-blue-950/30">
+                <p className="text-muted-foreground italic">
                   &quot;The only software house where you pay for code, not conferences.&quot;
                 </p>
               </div>

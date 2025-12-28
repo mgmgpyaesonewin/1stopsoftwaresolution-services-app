@@ -14,6 +14,15 @@ import {
   SelectTrigger,
   SelectValue,
 } from '@/components/ui/select'
+import Script from 'next/script'
+import { Calendar } from 'lucide-react'
+
+// Declare Calendly on window for TypeScript
+declare global {
+  interface Window {
+    Calendly: any
+  }
+}
 
 export default function ContactPage() {
   const [formData, setFormData] = useState({
@@ -266,6 +275,44 @@ export default function ContactPage() {
                     </p>
                   </form>
                 )}
+              </div>
+
+              <div className="bg-card mt-8 rounded-lg border-2 border-dashed border-blue-200 p-8 shadow-md dark:border-blue-900/50">
+                <div className="flex flex-col items-center text-center">
+                  <div className="mb-4 inline-flex h-12 w-12 items-center justify-center rounded-lg bg-blue-100 text-blue-600">
+                    <Calendar className="h-6 w-6" />
+                  </div>
+                  <h2 className="text-foreground mb-2">Or schedule a Google Meeting</h2>
+                  <p className="text-muted-foreground mb-6 max-w-md">
+                    Prefer a direct conversation? Book a 30-minute discovery call via Calendly at
+                    your convenience.
+                  </p>
+
+                  {/* Calendly link widget */}
+                  <link
+                    href="https://assets.calendly.com/assets/external/widget.css"
+                    rel="stylesheet"
+                  />
+                  <Script
+                    src="https://assets.calendly.com/assets/external/widget.js"
+                    strategy="lazyOnload"
+                  />
+
+                  <Button
+                    variant="outline"
+                    size="lg"
+                    className="border-blue-600 text-blue-600 hover:bg-blue-50 dark:hover:bg-blue-950/30"
+                    onClick={() => {
+                      if (window.Calendly) {
+                        window.Calendly.initPopupWidget({
+                          url: 'https://calendly.com/pyaesonewin-dev/30min',
+                        })
+                      }
+                    }}
+                  >
+                    Schedule time with me
+                  </Button>
+                </div>
               </div>
             </div>
           </div>

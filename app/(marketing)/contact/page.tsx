@@ -1,7 +1,7 @@
 'use client'
 
 import { useState } from 'react'
-import { Mail, MessageSquare, Clock, MapPin, Send } from 'lucide-react'
+import { Mail, MessageSquare, Clock, MapPin, Send, Calendar } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
 import { Textarea } from '@/components/ui/textarea'
@@ -15,7 +15,7 @@ import {
   SelectValue,
 } from '@/components/ui/select'
 import Script from 'next/script'
-import { Calendar } from 'lucide-react'
+import { sendContactEmail } from './actions'
 
 // Declare Calendly on window for TypeScript
 declare global {
@@ -34,30 +34,46 @@ export default function ContactPage() {
     message: '',
   })
   const [submitted, setSubmitted] = useState(false)
+  const [isLoading, setIsLoading] = useState(false)
+  const [error, setError] = useState<string | null>(null)
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
-    setSubmitted(true)
-    setTimeout(() => {
-      setSubmitted(false)
-      setFormData({
-        name: '',
-        email: '',
-        company: '',
-        projectType: '',
-        budget: '',
-        message: '',
-      })
-    }, 3000)
+    setIsLoading(true)
+    setError(null)
+
+    try {
+      const result = await sendContactEmail(formData)
+
+      if (result.success) {
+        setSubmitted(true)
+        setFormData({
+          name: '',
+          email: '',
+          company: '',
+          projectType: '',
+          budget: '',
+          message: '',
+        })
+      } else {
+        setError(result.error || 'Something went wrong. Please try again.')
+      }
+    } catch (err) {
+      console.error('Error sending email:', err)
+      setError('An unexpected error occurred. Please try again later.')
+    } finally {
+      setIsLoading(false)
+    }
   }
 
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>
   ) => {
-    setFormData({
-      ...formData,
-      [e.target.name]: e.target.value,
-    })
+    const { name, value } = e.target
+    setFormData((prev: typeof formData) => ({
+      ...prev,
+      [name]: value,
+    }))
   }
 
   return (
@@ -145,6 +161,12 @@ export default function ContactPage() {
             <div className="lg:col-span-2">
               <div className="bg-card rounded-lg p-8 shadow-md">
                 <h2 className="text-foreground mb-6">Send us a Message</h2>
+
+                {error && (
+                  <div className="mb-6 rounded-lg border-2 border-red-200 bg-red-50 p-4 text-red-800">
+                    {error}
+                  </div>
+                )}
 
                 {submitted ? (
                   <div className="rounded-lg border-2 border-green-200 bg-green-50 p-6 text-center text-green-800">
@@ -266,8 +288,15 @@ export default function ContactPage() {
                       type="submit"
                       size="lg"
                       className="w-full bg-blue-600 hover:bg-blue-700"
+                      disabled={isLoading}
                     >
-                      Send Message <Send className="ml-2 h-5 w-5" />
+                      {isLoading ? (
+                        <>Sending...</>
+                      ) : (
+                        <>
+                          Send Message <Send className="ml-2 h-5 w-5" />
+                        </>
+                      )}
                     </Button>
 
                     <p className="text-muted-foreground text-center">

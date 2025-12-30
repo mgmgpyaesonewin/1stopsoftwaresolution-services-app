@@ -11,7 +11,6 @@ import {
   Tailwind,
   Link,
 } from '@react-email/components'
-import * as React from 'react'
 
 interface UserConfirmationEmailProps {
   name: string

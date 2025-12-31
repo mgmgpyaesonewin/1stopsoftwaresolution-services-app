@@ -1,4 +1,5 @@
 import { CheckCircle, Target, TrendingUp } from 'lucide-react'
+import Image from 'next/image'
 import { PageHero } from '@/components/sections'
 
 export default function AboutPage() {
@@ -48,10 +49,11 @@ export default function AboutPage() {
             </div>
 
             <div className="relative">
-              <img
+              <Image
                 src="/illustrations/programming.svg"
                 alt="Programming illustration"
                 className="h-full w-full rounded-lg object-cover shadow-lg"
+                unoptimized
               />
             </div>
           </div>

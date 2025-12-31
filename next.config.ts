@@ -14,6 +14,7 @@ const nextConfig: NextConfig = {
       },
     ],
     formats: ['image/webp', 'image/avif'],
+    dangerouslyAllowSVG: true,
   },
   experimental: {
     optimizePackageImports: ['lucide-react'],

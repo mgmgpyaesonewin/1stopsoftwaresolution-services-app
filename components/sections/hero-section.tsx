@@ -1,5 +1,6 @@
 import Link from 'next/link'
 import { ArrowRight } from 'lucide-react'
+import Image from 'next/image'
 import { Button } from '@/components/ui/button'
 
 export function HeroSection() {
@@ -32,10 +33,11 @@ export function HeroSection() {
             </div>
           </div>
           <div className="relative h-64 lg:h-96">
-            <img
+            <Image
               src="/illustrations/project-collaboration.svg"
               alt="Software development team"
               className="h-full w-full object-contain"
+              unoptimized
             />
           </div>
         </div>

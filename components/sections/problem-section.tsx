@@ -1,3 +1,5 @@
+import Image from 'next/image'
+
 export function ProblemSection() {
   const problems = [
     'Expensive overhead with layers of managers and sales teams',
@@ -26,10 +28,11 @@ export function ProblemSection() {
             </ul>
           </div>
           <div className="relative h-64 lg:h-96">
-            <img
+            <Image
               src="/illustrations/solve-solution.svg"
               alt="Solving business problems"
               className="h-full w-full object-contain"
+              unoptimized
             />
           </div>
         </div>

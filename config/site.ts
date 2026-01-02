@@ -5,7 +5,7 @@ export const SITE_CONFIG = {
   url: 'https://1stopsoftwaresolution.com',
   ogImage: '/og-image.png',
   links: {
-    github: 'https://github.com/yourorg/1stopsoftwaresolution-services',
+    github: 'https://github.com/mgmgpyaesonewin/1stopsoftwaresolution-services-app',
     twitter: 'https://twitter.com/1stopsoftware',
   },
   nav: [
@@ -19,4 +19,4 @@ export const SITE_CONFIG = {
 
 export const CONTACT_EMAIL = 'pyaesonewin.dev@gmail.com'
 export const ADMIN_EMAIL = 'mgmgpyaesonewin@gmail.com'
-export const CTA_EMAIL = 'onboarding@contact.1stopsoftwaresolution.services'
+export const CTA_EMAIL = 'onboarding@1stopsoftwaresolution.services'

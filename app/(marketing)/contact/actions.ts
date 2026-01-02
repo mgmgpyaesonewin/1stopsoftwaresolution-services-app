@@ -1,12 +1,13 @@
 'use server'
 
 import { Resend } from 'resend'
-import { CONTACT_EMAIL } from '@/config/site'
+import { ADMIN_EMAIL, CTA_EMAIL } from '@/config/site'
 import { AdminContactEmail } from '@/components/emails/admin-contact-email'
 import { UserConfirmationEmail } from '@/components/emails/user-confirmation-email'
 import { ReactNode } from 'react'
 
 const resend = new Resend(process.env.RESEND_API_KEY)
+const SENDER_EMAIL = process.env.NODE_ENV === 'production' ? CTA_EMAIL : 'onboarding@resend.dev'
 
 export async function sendContactEmail(formData: {
   name: string
@@ -25,8 +26,8 @@ export async function sendContactEmail(formData: {
 
     // 1. Send notification to admin
     await resend.emails.send({
-      from: 'Contact Form <onboarding@resend.dev>', // Update this to your verified domain in production
-      to: CONTACT_EMAIL,
+      from: `Contact Form <${SENDER_EMAIL}>`, // Update this to your verified domain in production
+      to: ADMIN_EMAIL,
       subject: `New Inquiry: ${projectType} from ${name}`,
       react: AdminContactEmail({
         name,
@@ -40,7 +41,7 @@ export async function sendContactEmail(formData: {
 
     // 2. Send confirmation to user
     await resend.emails.send({
-      from: '1-Stop Software Solution Services <onboarding@resend.dev>', // Update this to your verified domain in production
+      from: `1-Stop Software Solution Services <${SENDER_EMAIL}>`, // Update this to your verified domain in production
       to: email,
       subject: "We've received your message!",
       react: UserConfirmationEmail({ name }) as ReactNode,

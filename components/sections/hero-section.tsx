@@ -38,6 +38,7 @@ export function HeroSection() {
               alt="Software development team"
               className="h-full w-full object-contain"
               unoptimized
+              fill
             />
           </div>
         </div>

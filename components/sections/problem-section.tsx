@@ -33,6 +33,7 @@ export function ProblemSection() {
               alt="Solving business problems"
               className="h-full w-full object-contain"
               unoptimized
+              fill
             />
           </div>
         </div>

@@ -54,6 +54,7 @@ export default function AboutPage() {
                 alt="Programming illustration"
                 className="h-full w-full rounded-lg object-cover shadow-lg"
                 unoptimized
+                fill
               />
             </div>
           </div>

@@ -1,13 +1,15 @@
 'use server'
 
 import { Resend } from 'resend'
-import { ADMIN_EMAIL, CTA_EMAIL } from '@/config/site'
+import { CONTACT_EMAIL, CTA_EMAIL } from '@/config/site'
 import { AdminContactEmail } from '@/components/emails/admin-contact-email'
 import { UserConfirmationEmail } from '@/components/emails/user-confirmation-email'
 import { ReactNode } from 'react'
 
 const resend = new Resend(process.env.RESEND_API_KEY)
 const SENDER_EMAIL = process.env.NODE_ENV === 'production' ? CTA_EMAIL : 'onboarding@resend.dev'
+const ADMIN_EMAIL =
+  process.env.NODE_ENV === 'production' ? CONTACT_EMAIL : process.env.RESEND_ACCOUNT_EMAIL || ''
 
 export async function sendContactEmail(formData: {
   name: string

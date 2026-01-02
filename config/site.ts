@@ -18,5 +18,4 @@ export const SITE_CONFIG = {
 }
 
 export const CONTACT_EMAIL = 'pyaesonewin.dev@gmail.com'
-export const ADMIN_EMAIL = 'mgmgpyaesonewin@gmail.com'
 export const CTA_EMAIL = 'onboarding@1stopsoftwaresolution.services'

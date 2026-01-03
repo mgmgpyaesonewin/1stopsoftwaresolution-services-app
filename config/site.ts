@@ -13,6 +13,7 @@ export const SITE_CONFIG = {
     { title: 'About', href: '/about' },
     { title: 'Services', href: '/services' },
     { title: 'Process', href: '/process' },
+    { title: 'Team', href: '/team' },
     { title: 'Contact', href: '/contact' },
   ],
 }

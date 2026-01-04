@@ -22,9 +22,9 @@ export const teamMembers: TeamMember[] = [
       'Laravel',
       'AWS',
     ],
-    email: 'pyaesonewin@1stopsoftwaresolution.com',
-    linkedin: 'https://linkedin.com/in/pyaesonewin',
-    github: 'https://github.com/pyaesonewin',
+    email: 'pyaesonewin.dev@gmail.com',
+    linkedin: 'https://www.linkedin.com/in/pyae-sone-win-dev',
+    github: 'https://github.com/mgmgpyaesonewin',
     experience: [
       {
         role: 'Full Stack Developer',
@@ -269,27 +269,42 @@ export const teamMembers: TeamMember[] = [
   {
     id: 'may-thin-lwin',
     name: 'May Thin Lwin',
-    role: 'Full-Stack Developer',
+    role: 'Full Stack Developer | Senior Software Engineer',
     shortBio: 'Expert in Laravel, React, Node.js, and building beautiful, performant applications',
-    fullBio:
-      'May Thin Lwin is a full-stack developer with a passion for creating exceptional user experiences. She has worked on projects ranging from HR platforms to e-commerce systems.',
+    fullBio: `I am an experienced Full Stack Developer with over 7 years of professional experience in web application and website development. I have a track record of successfully delivering tailored software, websites, and web applications to clients in Japan and entities within the Yoma Group. My proficiency spans across a wide range of technologies including PHP, HTML5, CSS, JavaScript, TypeScript, and ES6. I am experienced in frameworks such as Laravel, Phalcon, along with expertise in front-end libraries like Vue/Nuxt.js and React.js. Additionally, I possess comprehensive knowledge of various database systems, ensuring robust and efficient data management solutions.
+Beyond technical expertise, I excel in project management, ensuring the timely delivery of high- quality solutions while adhering to project timelines.My commitment to staying updated with the latest technologies and continuous learning underscores my passion for innovation and excellence in software development.`,
     image: '/team/may-thin-lwin.png',
     skills: ['Laravel', 'Next.js', 'React', 'Node.js', 'TypeScript', 'PostgreSQL'],
-    email: 'maythinline@1stopsoftwaresolution.com',
-    linkedin: 'https://linkedin.com/in/maythinlwin',
-    github: 'https://github.com/maythinlwin',
+    email: 'maythinlwin1996@gmail.com',
+    linkedin: 'https://www.linkedin.com/in/may-thin-lwin',
+    github: 'https://github.com/maythinlwin158',
+    education: [
+      {
+        university: 'University of Computer Studies, Yangon',
+        degree: 'B.C.Sc (Computer Science), Computer Science',
+        date: '2012 - 2017',
+        grade: 'A+',
+      },
+    ],
   },
   {
     id: 'yamin-khine',
     name: 'Yamin Khine',
-    role: 'Full-Stack Developer',
+    role: 'Full-Stack Developer | Frontend Software Engineer',
     shortBio: 'Specialist in modern web technologies and developer experience',
-    fullBio:
-      'Yamin Khine is a full-stack developer with a passion for creating exceptional user experiences. He has worked on projects ranging from HR platforms to e-commerce systems.',
+    fullBio: `Yamin Khine is a full-stack developer with a passion for creating exceptional user experiences. He has worked on projects ranging from HR platforms to e-commerce systems.`,
     image: '/team/yamin-khine.png',
     skills: ['Laravel', 'Next.js', 'React', 'Node.js', 'TypeScript', 'PostgreSQL', 'Wordpress'],
-    email: 'yamin@1stopsoftwaresolution.com',
+    email: 'yaminkhine1996@gmail.com',
     linkedin: 'https://linkedin.com/in/yaminkhine',
-    github: 'https://github.com/davidkim',
+    github: 'https://github.com/yaminkhine158',
+    education: [
+      {
+        university: 'University of Computer Studies, Yangon',
+        degree: 'B.C.Sc (Computer Science), Computer Science',
+        date: '2012 - 2017',
+        grade: 'A+',
+      },
+    ],
   },
 ]

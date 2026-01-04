@@ -93,7 +93,7 @@ export default async function TeamMemberPage({ params }: TeamMemberPageProps) {
                     className="text-muted-foreground hover:text-primary flex items-center transition-colors"
                   >
                     <Mail className="mr-3 h-5 w-5" />
-                    <span className="text-sm">Email</span>
+                    <span className="text-sm">{data.email}</span>
                   </a>
                   {data.linkedin && (
                     <a
@@ -103,7 +103,7 @@ export default async function TeamMemberPage({ params }: TeamMemberPageProps) {
                       className="text-muted-foreground hover:text-primary flex items-center transition-colors"
                     >
                       <Linkedin className="mr-3 h-5 w-5" />
-                      <span className="text-sm">LinkedIn</span>
+                      <span className="text-sm">{data.linkedin}</span>
                     </a>
                   )}
                   {data.github && (
@@ -114,7 +114,7 @@ export default async function TeamMemberPage({ params }: TeamMemberPageProps) {
                       className="text-muted-foreground hover:text-primary flex items-center transition-colors"
                     >
                       <Github className="mr-3 h-5 w-5" />
-                      <span className="text-sm">GitHub</span>
+                      <span className="text-sm">{data.github}</span>
                     </a>
                   )}
                 </div>

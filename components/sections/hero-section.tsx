@@ -13,8 +13,8 @@ export function HeroSection() {
               1-Stop Software Solution Services
             </h1>
             <p className="mb-8 text-xl text-indigo-100">
-              We&apos;re not a typical software house. We&apos;ve reimagined how custom software
-              development should work: lean, direct, and focused on results.
+              We design and build custom software that solves real business problems—without the
+              overhead, delays, or handoffs of traditional agencies.
             </p>
             <div className="flex flex-col gap-4 sm:flex-row">
               <Button asChild size="lg" className="bg-white text-indigo-600 hover:bg-indigo-50">

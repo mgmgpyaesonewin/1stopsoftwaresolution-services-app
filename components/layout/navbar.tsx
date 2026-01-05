@@ -1,6 +1,7 @@
 'use client'
 
 import Link from 'next/link'
+import Image from 'next/image'
 import { usePathname } from 'next/navigation'
 import { Menu } from 'lucide-react'
 import { Button } from '@/components/ui/button'
@@ -20,9 +21,13 @@ export function Navbar() {
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="flex h-16 items-center justify-between">
           <Link href="/" className="flex items-center space-x-2">
-            <div className="bg-primary text-primary-foreground flex h-8 w-8 items-center justify-center rounded font-bold">
-              1S
-            </div>
+            <Image
+              src="/logo.webp"
+              alt="1-Stop Software Logo"
+              width={32}
+              height={32}
+              className="rounded object-contain"
+            />
             <span className="text-foreground font-semibold">1-Stop Software</span>
           </Link>
 

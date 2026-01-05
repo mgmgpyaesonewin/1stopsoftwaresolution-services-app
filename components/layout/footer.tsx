@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import Image from 'next/image'
 import { SITE_CONFIG, CONTACT_EMAIL } from '@/config/site'
 import { Separator } from '@/components/ui/separator'
 
@@ -11,9 +12,13 @@ export function Footer() {
         <div className="grid grid-cols-1 gap-8 md:grid-cols-3">
           <div>
             <div className="mb-4 flex items-center space-x-2">
-              <div className="bg-primary text-primary-foreground flex h-8 w-8 items-center justify-center rounded font-bold">
-                1S
-              </div>
+              <Image
+                src="/logo.webp"
+                alt="1-Stop Software Logo"
+                width={32}
+                height={32}
+                className="rounded object-contain"
+              />
               <span className="font-semibold">1-Stop Software</span>
             </div>
             <p className="text-slate-400">Lean. Fast. Direct.</p>

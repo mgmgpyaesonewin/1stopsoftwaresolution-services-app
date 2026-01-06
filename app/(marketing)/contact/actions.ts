@@ -1,15 +1,15 @@
 'use server'
 
 import { Resend } from 'resend'
-import { CONTACT_EMAIL, CTA_EMAIL } from '@/config/site'
+import { ADMIN_EMAIL, CTA_EMAIL } from '@/config/site'
 import { AdminContactEmail } from '@/components/emails/admin-contact-email'
 import { UserConfirmationEmail } from '@/components/emails/user-confirmation-email'
 import { ReactNode } from 'react'
 
 const resend = new Resend(process.env.RESEND_API_KEY)
 const SENDER_EMAIL = process.env.NODE_ENV === 'production' ? CTA_EMAIL : 'onboarding@resend.dev'
-const ADMIN_EMAIL =
-  process.env.NODE_ENV === 'production' ? CONTACT_EMAIL : process.env.RESEND_ACCOUNT_EMAIL || ''
+const TO_SEND_EMAIL =
+  process.env.NODE_ENV === 'production' ? ADMIN_EMAIL : process.env.RESEND_ACCOUNT_EMAIL || ''
 
 export async function sendContactEmail(formData: {
   name: string
@@ -29,7 +29,7 @@ export async function sendContactEmail(formData: {
     // 1. Send notification to admin
     await resend.emails.send({
       from: `Contact Form <${SENDER_EMAIL}>`, // Update this to your verified domain in production
-      to: ADMIN_EMAIL,
+      to: TO_SEND_EMAIL,
       subject: `New Inquiry: ${projectType} from ${name}`,
       react: AdminContactEmail({
         name,

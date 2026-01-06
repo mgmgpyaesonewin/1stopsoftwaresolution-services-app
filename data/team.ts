@@ -22,7 +22,7 @@ export const teamMembers: TeamMember[] = [
       'Laravel',
       'AWS',
     ],
-    email: 'pyaesonewin.dev@gmail.com',
+    email: 'pyaesonewin@1stopsoftwaresolution.com',
     linkedin: 'https://www.linkedin.com/in/pyae-sone-win-dev',
     github: 'https://github.com/mgmgpyaesonewin',
     experience: [
@@ -275,7 +275,7 @@ export const teamMembers: TeamMember[] = [
 Beyond technical expertise, I excel in project management, ensuring the timely delivery of high- quality solutions while adhering to project timelines.My commitment to staying updated with the latest technologies and continuous learning underscores my passion for innovation and excellence in software development.`,
     image: '/team/may-thin-lwin.png',
     skills: ['Laravel', 'Next.js', 'React', 'Node.js', 'TypeScript', 'PostgreSQL'],
-    email: 'maythinlwin1996@gmail.com',
+    email: 'maythinlwin@1stopsoftwaresolution.com',
     linkedin: 'https://www.linkedin.com/in/may-thin-lwin',
     github: 'https://github.com/maythinlwin158',
     education: [

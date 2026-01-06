@@ -169,7 +169,32 @@ export default async function TeamMemberPage({ params }: TeamMemberPageProps) {
                           )}
                         </div>
                         {exp.description && (
-                          <p className="text-muted-foreground mb-2 text-sm">{exp.description}</p>
+                          <div className="text-muted-foreground mb-2 text-sm">
+                            {exp.description.includes('\n') ? (
+                              <ul className="list-disc space-y-1 pl-5">
+                                {exp.description.split('\n').map((line, i) => {
+                                  const trimmedLine = line.trim()
+                                  if (!trimmedLine) return null
+                                  // Check if line starts with bullet point or hyphen
+                                  const isListItem =
+                                    trimmedLine.startsWith('•') || trimmedLine.startsWith('-')
+                                  const content = isListItem
+                                    ? trimmedLine.substring(1).trim()
+                                    : trimmedLine
+
+                                  return isListItem ? (
+                                    <li key={i}>{content}</li>
+                                  ) : (
+                                    <p key={i} className="mb-1">
+                                      {trimmedLine}
+                                    </p>
+                                  )
+                                })}
+                              </ul>
+                            ) : (
+                              <p>{exp.description}</p>
+                            )}
+                          </div>
                         )}
                         {exp.skills && exp.skills.length > 0 && (
                           <div className="mt-2 flex flex-wrap gap-2">

@@ -22,7 +22,7 @@ export const teamMembers: TeamMember[] = [
       'Laravel',
       'AWS',
     ],
-    email: 'pyaesonewin@1stopsoftwaresolution.com',
+    email: 'pyaesonewin@1stopsoftwaresolution.services',
     linkedin: 'https://www.linkedin.com/in/pyae-sone-win-dev',
     github: 'https://github.com/mgmgpyaesonewin',
     experience: [

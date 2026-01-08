@@ -1,11 +1,11 @@
 import { render, screen, fireEvent, waitFor, act } from '@testing-library/react'
 import { describe, it, expect, vi, beforeEach } from 'vitest'
 import React from 'react'
-import ContactPage from '../page'
-import { sendContactEmail } from '../actions'
+import ContactPage from '@/app/(marketing)/contact/page'
+import { sendContactEmail } from '@/app/(marketing)/contact/actions'
 
 // Mock the server action
-vi.mock('../actions', () => ({
+vi.mock('@/app/(marketing)/contact/actions', () => ({
   sendContactEmail: vi.fn(),
 }))
 

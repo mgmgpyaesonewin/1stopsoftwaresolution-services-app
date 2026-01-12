@@ -48,7 +48,7 @@
     "@changesets/cli": "^2.29.8",
     "@commitlint/cli": "^20.2.0",
     "@commitlint/config-conventional": "^20.2.0",
-    "@react-email/components": "^1.0.2",
+    "@react-email/components": "^1.0.4",
     "@react-email/tailwind": "^2.0.2",
     "@tailwindcss/postcss": "^4",
     "@testing-library/jest-dom": "^6.9.1",

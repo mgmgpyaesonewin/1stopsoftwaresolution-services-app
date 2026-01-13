@@ -1,6 +1,3 @@
 export async function register() {
-  if (process.env.NEXT_RUNTIME === 'nodejs') {
-    const { serverInstance } = await import('@/lib/rollbar')
-    serverInstance.log('Rollbar initialized on server')
-  }
+  // Instrumentation setup - Sentry integration planned for future
 }

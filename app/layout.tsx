@@ -3,7 +3,6 @@ import { Geist, Geist_Mono } from 'next/font/google'
 import { Analytics } from '@vercel/analytics/next'
 import { SpeedInsights } from '@vercel/speed-insights/next'
 import { GoogleAnalytics } from '@/components/google-analytics'
-import { RollbarProvider } from '@/components/providers/rollbar-provider'
 import { SITE_CONFIG } from '@/config/site'
 import './globals.css'
 
@@ -86,7 +85,6 @@ export default function RootLayout({
         <GoogleAnalytics />
         <Analytics />
         <SpeedInsights />
-        <RollbarProvider />
       </body>
     </html>
   )

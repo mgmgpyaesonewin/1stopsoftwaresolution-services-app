@@ -1,6 +1,8 @@
+/**
+ * Next.js instrumentation hook for registering monitoring and observability tools.
+ * Called once when the Next.js server starts.
+ * @see https://nextjs.org/docs/app/building-your-application/optimizing/instrumentation
+ */
 export async function register() {
-  if (process.env.NEXT_RUNTIME === 'nodejs') {
-    const { serverInstance } = await import('@/lib/rollbar')
-    serverInstance.log('Rollbar initialized on server')
-  }
+  // Instrumentation setup - Sentry integration planned for future
 }

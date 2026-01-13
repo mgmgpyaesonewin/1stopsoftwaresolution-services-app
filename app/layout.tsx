@@ -3,7 +3,6 @@ import { Geist, Geist_Mono } from 'next/font/google'
 import { Analytics } from '@vercel/analytics/next'
 import { SpeedInsights } from '@vercel/speed-insights/next'
 import { GoogleAnalytics } from '@/components/google-analytics'
-import { RollbarProvider } from '@/components/providers/rollbar-provider'
 import { SITE_CONFIG } from '@/config/site'
 import './globals.css'
 
@@ -74,6 +73,13 @@ export const metadata: Metadata = {
   },
 }
 
+/**
+ * Root layout component that wraps all pages in the application.
+ * Provides global fonts, analytics, and base HTML structure.
+ * @param props - Component props
+ * @param props.children - Child components to render within the layout
+ * @returns The root HTML structure with global providers
+ */
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -86,7 +92,6 @@ export default function RootLayout({
         <GoogleAnalytics />
         <Analytics />
         <SpeedInsights />
-        <RollbarProvider />
       </body>
     </html>
   )

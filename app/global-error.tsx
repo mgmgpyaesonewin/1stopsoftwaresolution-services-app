@@ -1,24 +1,20 @@
 'use client'
 
-import { useEffect } from 'react'
-import Rollbar from 'rollbar'
-import { clientConfig } from '@/lib/rollbar'
-
+/**
+ * Global error boundary component for handling unhandled errors in the application.
+ * This component is rendered when an error occurs at the root level.
+ * @param props - Component props
+ * @param props.error - The error object that was thrown
+ * @param props.reset - Function to reset the error boundary and retry rendering
+ * @returns A fallback UI with an option to retry
+ */
 export default function GlobalError({
-  error,
+  error: _error,
   reset,
 }: {
   error: Error & { digest?: string }
   reset: () => void
 }) {
-  useEffect(() => {
-    // Log the error to Rollbar
-    if (process.env.NEXT_PUBLIC_ROLLBAR_CLIENT_TOKEN) {
-      const rollbar = new Rollbar(clientConfig)
-      rollbar.error(error)
-    }
-  }, [error])
-
   return (
     <html>
       <body>

@@ -73,6 +73,13 @@ export const metadata: Metadata = {
   },
 }
 
+/**
+ * Root layout component that wraps all pages in the application.
+ * Provides global fonts, analytics, and base HTML structure.
+ * @param props - Component props
+ * @param props.children - Child components to render within the layout
+ * @returns The root HTML structure with global providers
+ */
 export default function RootLayout({
   children,
 }: Readonly<{

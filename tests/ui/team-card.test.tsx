@@ -96,7 +96,7 @@ describe('TeamCard', () => {
   it('does not show social links when member has no social info', () => {
     const memberWithoutSocials: TeamMember = {
       ...mockMember,
-      email: undefined,
+      email: '',
       github: undefined,
       linkedin: undefined,
     }
